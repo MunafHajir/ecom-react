@@ -16,6 +16,7 @@ class Login extends Component {
   }
 
   updateInput = (event, key) => {
+    this.props.printName(event.target.value)
     this.setState(
       {
         [key]: event.target.value
@@ -28,7 +29,8 @@ class Login extends Component {
 
     if(username === data.username && password === data.password) {
       localStorage.setItem('loggedIn', 1);
-      this.setState({'username': '', 'password': ''});
+      
+      this.props.changeIsLoggedIn(true);
     }
 
   }

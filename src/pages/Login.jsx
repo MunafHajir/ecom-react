@@ -1,10 +1,14 @@
 import React from 'react'
 import LoginC from '../components/Login'
 
-function Login() {
+function Login(props) {
+  
   return (
     <>
-      <LoginC/>
+      <LoginC  
+      changeIsLoggedIn={props.changeIsLoggedIn}
+      printName = {props.printName}
+      />
     </>
   )
 }

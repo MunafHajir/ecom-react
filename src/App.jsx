@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "./Layout";
 import Login from "./pages/Login";
 import Product from "./pages/Product";
 
 function App() {
-  const loggedIn = localStorage.getItem('loggedIn');
-  console.log(loggedIn)
+  const [isLoggedIn, changeIsLoggedIn] = useState(false);
+
+  const loggedIn = localStorage.getItem("loggedIn");
+
+  const printName = (name) => console.log(name);
+
   return (
     <>
       <Layout>
-       { 
-        loggedIn && loggedIn == 1 ? <Product /> : <Login /> 
-       }
+        {
+          loggedIn 
+            ? (
+              <Product />
+            ) 
+            : (
+              <Login 
+              printName={printName}
+              changeIsLoggedIn={changeIsLoggedIn} 
+              />
+            )
+        }
       </Layout>
     </>
-  )
+  );
 }
 
 export default App;
