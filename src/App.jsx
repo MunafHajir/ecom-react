@@ -12,20 +12,11 @@ function App() {
 
   return (
     <>
-      <Layout>
-        {
-          loggedIn 
-            ? (
-              <Product />
-            ) 
-            : (
-              <Login 
-              printName={printName}
-              changeIsLoggedIn={changeIsLoggedIn} 
-              />
-            )
-        }
-      </Layout>
+      <Layout 
+        printName={printName}
+        changeIsLoggedIn={changeIsLoggedIn} 
+        loggedIn={loggedIn}
+      />
     </>
   );
 }

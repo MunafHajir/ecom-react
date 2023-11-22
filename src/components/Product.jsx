@@ -1,4 +1,6 @@
 import { Component } from "react";
+import ProductData from '../data/product.json'
+
 
 class Product extends Component {
   constructor(props) {
@@ -13,9 +15,7 @@ class Product extends Component {
   }
 
   getProductList = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => this.setState({ productList: json }));
+    
   };
 
   componentDidMount(){
